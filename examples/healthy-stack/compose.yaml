@@ -1,0 +1,13 @@
+services:
+  api:
+    build: ./api
+    ports:
+      - "127.0.0.1:8080:3000"
+    environment:
+      DATABASE_URL: postgres://db:5432/app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+  db:
+    image: postgres:17
+    expose:
+      - "5432"

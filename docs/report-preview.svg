@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">Port Map Check HTML report preview</title>
+  <desc id="desc">Dark dashboard showing port mappings and configuration findings.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#12304a"/><stop offset=".42" stop-color="#08111d"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-opacity=".25"/></filter>
+  </defs>
+  <rect width="1200" height="660" rx="20" fill="url(#bg)"/>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="52" y="62" fill="#eef6ff" font-size="30" font-weight="700">Port Map Check</text>
+    <text x="52" y="89" fill="#92a5bb" font-size="14">Repository port topology · static analysis</text>
+    <g transform="translate(52 118)" filter="url(#shadow)">
+      <g fill="#101d2d" stroke="#26384f">
+        <rect width="166" height="86" rx="12"/><rect x="178" width="166" height="86" rx="12"/><rect x="356" width="166" height="86" rx="12"/>
+        <rect x="534" width="166" height="86" rx="12"/><rect x="712" width="166" height="86" rx="12"/><rect x="890" width="166" height="86" rx="12"/>
+      </g>
+      <g font-size="25" font-weight="700" fill="#eef6ff"><text x="18" y="37">8</text><text x="196" y="37">10</text><text x="374" y="37">4</text><text x="552" y="37" fill="#ff6d7c">6</text><text x="730" y="37" fill="#ffd166">3</text><text x="908" y="37">3</text></g>
+      <g font-size="12" fill="#92a5bb"><text x="18" y="64">resources</text><text x="196" y="64">ports</text><text x="374" y="64">URL references</text><text x="552" y="64">errors</text><text x="730" y="64">warnings</text><text x="908" y="64">files scanned</text></g>
+    </g>
+    <text x="52" y="246" fill="#eef6ff" font-size="18" font-weight="650">Findings</text>
+    <g transform="translate(52 266)">
+      <rect width="1096" height="68" rx="10" fill="#281b27" stroke="#542d3d"/><rect width="4" height="68" rx="2" fill="#ff6d7c"/>
+      <text x="18" y="26" fill="#ff8e9a" font-size="13" font-weight="700">ERROR</text><text x="76" y="26" fill="#4ed4d0" font-size="13">compose-service-uses-host-port</text>
+      <text x="18" y="50" fill="#eef6ff" font-size="13">api connects to db on published host port 5433; service-to-service traffic must use container port 5432.</text>
+      <text x="916" y="26" fill="#92a5bb" font-size="12">compose.yaml:7</text>
+    </g>
+    <g transform="translate(52 344)">
+      <rect width="1096" height="68" rx="10" fill="#281b27" stroke="#542d3d"/><rect width="4" height="68" rx="2" fill="#ff6d7c"/>
+      <text x="18" y="26" fill="#ff8e9a" font-size="13" font-weight="700">ERROR</text><text x="76" y="26" fill="#4ed4d0" font-size="13">k8s-ingress-port-mismatch</text>
+      <text x="18" y="50" fill="#eef6ff" font-size="13">Ingress web references Service web port 81, but the Service exposes port 80/http.</text>
+      <text x="916" y="26" fill="#92a5bb" font-size="12">k8s/app.yaml:63</text>
+    </g>
+    <text x="52" y="452" fill="#eef6ff" font-size="18" font-weight="650">Port map</text>
+    <g transform="translate(52 470)">
+      <rect width="1096" height="142" rx="12" fill="#101d2d" stroke="#26384f"/>
+      <g fill="#92a5bb" font-size="11" font-weight="700"><text x="18" y="27">PLATFORM</text><text x="188" y="27">RESOURCE</text><text x="356" y="27">KIND</text><text x="522" y="27">MAPPING</text><text x="710" y="27">SOURCE</text></g>
+      <path d="M18 42h1060M18 84h1060" stroke="#26384f"/>
+      <g font-size="13"><rect x="18" y="53" width="118" height="22" rx="11" fill="#20354e"/><text x="30" y="68" fill="#d7e7ff">docker-compose</text><text x="188" y="68" fill="#eef6ff">api</text><text x="356" y="68" fill="#eef6ff">published</text><text x="522" y="68" fill="#4ed4d0">8080 → 3000/tcp</text><text x="710" y="68" fill="#92a5bb">compose.yaml:5</text></g>
+      <g font-size="13"><rect x="18" y="95" width="96" height="22" rx="11" fill="#20354e"/><text x="30" y="110" fill="#d7e7ff">kubernetes</text><text x="188" y="110" fill="#eef6ff">web</text><text x="356" y="110" fill="#eef6ff">service</text><text x="522" y="110" fill="#4ed4d0">80 → http/tcp</text><text x="710" y="110" fill="#92a5bb">k8s/app.yaml:33</text></g>
+    </g>
+    <text x="52" y="640" fill="#92a5bb" font-size="12">Built by ConfigCrate · configcrate.com</text>
+  </g>
+</svg>

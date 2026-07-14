@@ -1,0 +1,5 @@
+/dist/
+/*.html
+/*.exe
+/port-map-check
+coverage.out

@@ -1,0 +1,33 @@
+name: Port Map Check
+description: Find broken port and service wiring across Docker Compose, Kubernetes, Dockerfiles, and devcontainers
+author: ConfigCrate
+
+branding:
+  icon: share-2
+  color: blue
+
+inputs:
+  path:
+    description: Repository directory to scan
+    required: false
+    default: .
+  format:
+    description: Report format (text, json, or html)
+    required: false
+    default: text
+  output:
+    description: Optional report output path
+    required: false
+    default: ""
+  fail-on:
+    description: Failure threshold (error, warning, or never)
+    required: false
+    default: error
+  exclude:
+    description: Comma- or newline-separated repository-relative path globs to exclude
+    required: false
+    default: ""
+
+runs:
+  using: docker
+  image: Dockerfile
