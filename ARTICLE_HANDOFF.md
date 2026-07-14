@@ -8,7 +8,7 @@
 - License: MIT
 - Language: Go 1.24+
 - Runtime dependency: yaml.v3
-- Status: v0.1.0 release candidate
+- Status: v0.1.0 released
 
 ## One-sentence description
 
